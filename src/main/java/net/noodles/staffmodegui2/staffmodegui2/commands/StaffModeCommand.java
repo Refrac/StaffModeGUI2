@@ -36,18 +36,36 @@ public class StaffModeCommand implements CommandExecutor {
             p.openInventory ( StaffModeGUI2.getInstance ().getMainInv ().getInventory () );
             return true;
         }
-                if (args[0].equalsIgnoreCase ( "reload" )) {
-                    if (!p.hasPermission ( "staffmodegui.reload" )) {
-                        p.sendMessage ( StaffModeGUI2.getPlugin ().getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) );
-                        return false;
-                    }
-                    if (args.length == 1) {
-                        staffmodegui2.reloadConfig ();
-                        p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.reloadMessage" ) ) );
-                        return true;
-                    }
-                    return false;
-                }
+        if (args[0].equalsIgnoreCase ( "reload" )) {
+            if (!p.hasPermission ( "staffmodegui.reload" )) {
+                p.sendMessage ( StaffModeGUI2.getPlugin ().getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) );
                 return false;
             }
+            if (args.length == 1) {
+                staffmodegui2.reloadConfig ();
+                p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.reloadMessage" ).replace ( "&" , "§" ) ) );
+                return true;
+            }
+            if (args[1].equalsIgnoreCase ( "about" )) {
+                if (!p.hasPermission ( "staffmodegui.about" )) {
+                    p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) ) );
+                    return false;
+                }
+                if (args.length == 2) {
+                    p.sendMessage ( ChatColor.GRAY + "********************" );
+                    p.sendMessage ( "" );
+                    p.sendMessage ( ChatColor.GRAY + "Created by: " + ChatColor.WHITE + Settings.DEVELOPER_NAME );
+                    p.sendMessage ( ChatColor.GRAY + "Website: " + ChatColor.WHITE + Settings.DEVELOPER_URL );
+                    p.sendMessage ( ChatColor.GRAY + "Feedback: " + ChatColor.WHITE + Settings.FEEDBACK);
+                    p.sendMessage ( ChatColor.GOLD + "Spigot Link: " + ChatColor.WHITE + Settings.PLUGIN_URL );
+                    p.sendMessage ( ChatColor.GOLD + "Support Link: " + ChatColor.WHITE + Settings.SUPPORT_DISCORD_URL );
+                    p.sendMessage ( ChatColor.GOLD + "Version: " + ChatColor.WHITE + Settings.VERSION );
+                    p.sendMessage ( "" );
+                    p.sendMessage ( ChatColor.GRAY + "********************" );
+                    return true;
+                }
+            }
         }
+        return false;
+    }
+}
