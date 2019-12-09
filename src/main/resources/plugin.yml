@@ -8,4 +8,3 @@ commands:
   staffmodedev:
   staffmode:
     aliases: [sm, smgui]
-

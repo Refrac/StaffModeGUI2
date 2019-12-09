@@ -31,6 +31,7 @@ public class WeatherInv implements Listener {
     private int getSize() {
         return 9;
     }
+
     public Inventory getInventory() {
         Inventory inv = Bukkit.createInventory(null, getSize(), getTitle());
 
@@ -48,7 +49,6 @@ public class WeatherInv implements Listener {
         return inv;
     }
 
-
     private ItemStack Glass() {
         ItemStack stone = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short)8);
         ItemMeta stonem = stone.getItemMeta();
@@ -56,7 +56,6 @@ public class WeatherInv implements Listener {
         stone.setItemMeta(stonem);
         return stone;
     }
-
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
@@ -82,9 +81,6 @@ public class WeatherInv implements Listener {
         } else if (event.getCurrentItem().isSimilar(WeatherInvItems.menuReturn())) {
             player.sendMessage(StaffModeGUI2.getPlugin().getConfig().getString("mainMenuReturn.message1").replace("&", "§"));
             player.openInventory(StaffModeGUI2.getInstance().getServerManagerInv().getInventory());
-
         }
     }
-
-
 }

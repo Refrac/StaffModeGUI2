@@ -15,9 +15,8 @@ import java.util.Arrays;
 public final class StaffModeGUI2 extends JavaPlugin {
 
     public static StaffModeGUI2 plugin;
-    private UpdateChecker checker;
+    public UpdateChecker checker;
     private static StaffModeGUI2 instance;
-
 
     //INV
     private MainInv mainInv;
@@ -42,14 +41,16 @@ public final class StaffModeGUI2 extends JavaPlugin {
     public void onEnable() {
         Logger.log ( Logger.LogLevel.OUTLINE , "********************" );
         Logger.log ( Logger.LogLevel.INFO , "Initializing StaffModeGUI2 Version: " + Settings.VERSION );
-        Logger.log ( Logger.LogLevel.INFO , "Created by: " + Settings.DEVELOPER_NAME );
-        Logger.log ( Logger.LogLevel.INFO , "Website: " + Settings.DEVELOPER_URL );
-        Logger.log ( Logger.LogLevel.INFO , "Spigot Link: " + Settings.PLUGIN_URL );
-        Logger.log ( Logger.LogLevel.INFO , "Support Link: " + Settings.SUPPORT_DISCORD_URL );
+        Logger.log ( Logger.LogLevel.INFO, "Created by: " + Settings.DEVELOPER_NAME);
+        Logger.log ( Logger.LogLevel.INFO, "Website: " + Settings.DEVELOPER_URL);
+        Logger.log ( Logger.LogLevel.INFO, "Spigot: " + Settings.PLUGIN_URL);
+        Logger.log ( Logger.LogLevel.INFO, "Support: " + Settings.SUPPORT_DISCORD_URL);
+        Logger.log ( Logger.LogLevel.INFO, "Suggestions/Feedback: " + Settings.FEEDBACK);
+        Logger.log ( Logger.LogLevel.INFO, "Wiki: " + Settings.WIKI);
         Logger.log ( Logger.LogLevel.OUTLINE , "********************" );
         Logger.log ( Logger.LogLevel.INFO , "Plugin Loading..." );
         Logger.log ( Logger.LogLevel.INFO , "Registering Managers..." );
-        this.plugin = this;
+        plugin = this;
         instance = this;
         MetricsLite metrics = new MetricsLite ( this );
         Logger.log ( Logger.LogLevel.INFO , "Managers Registered!" );
@@ -103,16 +104,13 @@ public final class StaffModeGUI2 extends JavaPlugin {
         }
     }
 
-
     @Override
     public void onDisable() {
     }
 
-
     private void registerListener(Listener... listeners) {
         Arrays.stream ( listeners ).forEach ( l -> getServer ().getPluginManager ().registerEvents ( l , this ) );
     }
-
 
     @SuppressWarnings({"rawtypes" , "unchecked"})
     public static StaffModeGUI2 getPlugin() {
@@ -133,11 +131,9 @@ public final class StaffModeGUI2 extends JavaPlugin {
         }
     }
 
-
     public static StaffModeGUI2 getInstance() {
         return instance;
     }
-
 
     //INV
 

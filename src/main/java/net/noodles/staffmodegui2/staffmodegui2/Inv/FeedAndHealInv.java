@@ -15,8 +15,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class FeedAndHealInv implements Listener {
+
     @SuppressWarnings("unused")
     private StaffModeGUI2 main;
+
     public FeedAndHealInv(StaffModeGUI2 main) {
         this.main = main;
         main.getServer().getPluginManager().registerEvents(this, main);
@@ -28,6 +30,7 @@ public class FeedAndHealInv implements Listener {
     private int getSize() {
         return 9;
     }
+
     public Inventory getInventory() {
         Inventory inv = Bukkit.createInventory(null, getSize(), getTitle());
 
@@ -44,7 +47,6 @@ public class FeedAndHealInv implements Listener {
         return inv;
     }
 
-
     private ItemStack Glass() {
         ItemStack stone = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short)8);
         ItemMeta stonem = stone.getItemMeta();
@@ -52,7 +54,6 @@ public class FeedAndHealInv implements Listener {
         stone.setItemMeta(stonem);
         return stone;
     }
-
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
@@ -78,6 +79,4 @@ public class FeedAndHealInv implements Listener {
             player.openInventory(StaffModeGUI2.getInstance().getToolsInv().getInventory());
         }
     }
-
-
 }

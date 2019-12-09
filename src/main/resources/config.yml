@@ -1,5 +1,5 @@
 #=======================================================
-configVersion: 1.0
+configVersion: 1.1-beta3
 # DO NOT CHANGE PLEASE.
 #=======================================================
 # Permission Needed: staffmodegui.update
@@ -318,7 +318,7 @@ trollMenu: #Permission Needed: staffmodegui.trollmenu
   titleItemCowTroll: "&bCow Troll"
   loreItemCowTroll: "&7Spawns a Cow on all online players!"
   messageItemCowTroll: "&bSlowness Troll!"
-  titleItemJumpTroll: "&7Jump Troll"
+  titleItemJumpTroll: "&bJump Troll"
   loreItemJumpTroll: "&7Give all online players Jump Boost &c&lForever!"
   messageItemJumpTroll: "&bJump Troll!"
 #========================================================

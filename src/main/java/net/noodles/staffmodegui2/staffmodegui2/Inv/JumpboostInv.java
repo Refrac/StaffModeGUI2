@@ -1,7 +1,6 @@
 package net.noodles.staffmodegui2.staffmodegui2.Inv;
 
 import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.JumpboostInvItems;
-import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.MainInvItems;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -24,7 +23,7 @@ public class JumpboostInv implements Listener {
         main.getServer().getPluginManager().registerEvents(this, main);
     }
     private String getTitle() {
-        return ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Jump Boost Menu";
+        return ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Jump Boost Control";
     }
 
     private int getSize() {

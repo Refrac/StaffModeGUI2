@@ -15,6 +15,7 @@ import net.noodles.staffmodegui2.staffmodegui2.StaffModeGUI2;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class ServerManagerInv implements Listener {
+
     @SuppressWarnings("unused")
     private StaffModeGUI2 main;
 
@@ -48,7 +49,6 @@ public class ServerManagerInv implements Listener {
         return inv;
     }
 
-
     private ItemStack Glass() {
         ItemStack stone = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 8);
         ItemMeta stonem = stone.getItemMeta();
@@ -56,7 +56,6 @@ public class ServerManagerInv implements Listener {
         stone.setItemMeta(stonem);
         return stone;
     }
-
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
@@ -83,10 +82,10 @@ public class ServerManagerInv implements Listener {
         } else if (event.getCurrentItem().isSimilar(ServerManagerInvItems.clearMobs ())) {
             player.sendMessage(StaffModeGUI2.getPlugin().getConfig().getString("toolsMenu.messageItemClearMobs").replace("&", "§"));
             player.getInventory().clear();
+            player.closeInventory();
         } else if (event.getCurrentItem().isSimilar(MainInvItems.mainMenuReturn())) {
             player.sendMessage(StaffModeGUI2.getPlugin().getConfig().getString("mainMenuReturn.message").replace("&", "§"));
             player.openInventory(StaffModeGUI2.getInstance().getMainInv().getInventory());
-
         }
     }
 }

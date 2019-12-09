@@ -1,7 +1,6 @@
 package net.noodles.staffmodegui2.staffmodegui2.Inv;
 
 import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.VanishInvItems;
-import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.MainInvItems;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -35,7 +34,7 @@ public class VanishInv implements Listener {
         Inventory inv = Bukkit.createInventory(null, getSize(), getTitle());
 
         inv.setItem(2, VanishInvItems.VanishON());
-        inv.setItem(6, VanishInvItems.VanishOFF());
+        inv.setItem(4, VanishInvItems.VanishOFF());
         inv.setItem(8, VanishInvItems.menuReturn());
 
         for (int i = 0; i < 9; ++i) {

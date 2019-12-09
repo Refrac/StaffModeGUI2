@@ -1,6 +1,5 @@
 package net.noodles.staffmodegui2.staffmodegui2.Inv;
 
-
 import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.GamemodeInvItems;
 import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.MainInvItems;
 import org.bukkit.Bukkit;
@@ -32,6 +31,7 @@ public class GamemodeInv implements Listener {
     private int getSize() {
         return 18;
     }
+
     public Inventory getInventory() {
         Inventory inv = Bukkit.createInventory(null, getSize(), getTitle());
 
@@ -91,8 +91,6 @@ public class GamemodeInv implements Listener {
         } else if (event.getCurrentItem().isSimilar(MainInvItems.mainMenuReturn())) {
             player.sendMessage(StaffModeGUI2.getPlugin().getConfig().getString("mainMenuReturn.message").replace("&", "§"));
             player.openInventory(StaffModeGUI2.getInstance().getMainInv().getInventory());
-
         }
     }
-
 }

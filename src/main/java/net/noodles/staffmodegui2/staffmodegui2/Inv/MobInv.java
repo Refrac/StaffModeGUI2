@@ -31,6 +31,7 @@ public class MobInv implements Listener {
     private int getSize() {
         return 27;
     }
+
     public Inventory getInventory() {
         Inventory inv = Bukkit.createInventory(null, getSize(), getTitle());
 
@@ -70,7 +71,6 @@ public class MobInv implements Listener {
         return inv;
     }
 
-
     private ItemStack Glass() {
         ItemStack stone = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short)8);
         ItemMeta stonem = stone.getItemMeta();
@@ -78,7 +78,6 @@ public class MobInv implements Listener {
         stone.setItemMeta(stonem);
         return stone;
     }
-
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
@@ -196,9 +195,6 @@ public class MobInv implements Listener {
         } else if (event.getCurrentItem().isSimilar(MainInvItems.mainMenuReturn())) {
             player.sendMessage(StaffModeGUI2.getPlugin().getConfig().getString("mainMenuReturn.message").replace("&", "§"));
             player.openInventory(StaffModeGUI2.getInstance().getMainInv().getInventory());
-
         }
     }
-
-
 }

@@ -1,6 +1,5 @@
 package net.noodles.staffmodegui2.staffmodegui2.Inv;
 
-import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.MainInvItems;
 import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.StrengthInvItems;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -24,7 +23,7 @@ public class StrengthInv implements Listener {
         main.getServer().getPluginManager().registerEvents(this, main);
     }
     private String getTitle() {
-        return ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Strength Menu";
+        return ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Strength Control";
     }
 
     private int getSize() {

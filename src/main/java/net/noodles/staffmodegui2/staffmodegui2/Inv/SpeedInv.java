@@ -1,6 +1,5 @@
 package net.noodles.staffmodegui2.staffmodegui2.Inv;
 
-import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.MainInvItems;
 import net.noodles.staffmodegui2.staffmodegui2.Inv.InvItems.SpeedInvItems;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -24,7 +23,7 @@ public class SpeedInv implements Listener {
         main.getServer().getPluginManager().registerEvents(this, main);
     }
     private String getTitle() {
-        return ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Speed Menu";
+        return ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "Speed Control";
     }
 
     private int getSize() {

@@ -15,6 +15,7 @@ import net.noodles.staffmodegui2.staffmodegui2.StaffModeGUI2;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class ToolsInv implements Listener {
+
     @SuppressWarnings("unused")
     private StaffModeGUI2 main;
 
@@ -50,7 +51,6 @@ public class ToolsInv implements Listener {
         return inv;
     }
 
-
     private ItemStack Glass() {
         ItemStack stone = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 8);
         ItemMeta stonem = stone.getItemMeta();
@@ -58,7 +58,6 @@ public class ToolsInv implements Listener {
         stone.setItemMeta(stonem);
         return stone;
     }
-
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
