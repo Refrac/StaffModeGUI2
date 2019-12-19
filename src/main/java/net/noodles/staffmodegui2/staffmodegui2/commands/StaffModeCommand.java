@@ -46,7 +46,7 @@ public class StaffModeCommand implements CommandExecutor {
                 p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.reloadMessage" ).replace ( "&" , "§" ) ) );
                 return true;
             }
-            if (args[1].equalsIgnoreCase ( "about" )) {
+            if (args[0].equalsIgnoreCase ( "about" )) {
                 if (!p.hasPermission ( "staffmodegui.about" )) {
                     p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) ) );
                     return false;
