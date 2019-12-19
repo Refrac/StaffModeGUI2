@@ -41,7 +41,7 @@ public class StaffModeCommand implements CommandExecutor {
                 p.sendMessage ( StaffModeGUI2.getPlugin ().getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) );
                 return false;
             }
-            if (args.length == 1) {
+            if (args.length == 0) {
                 staffmodegui2.reloadConfig ();
                 p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.reloadMessage" ).replace ( "&" , "§" ) ) );
                 return true;
@@ -51,7 +51,7 @@ public class StaffModeCommand implements CommandExecutor {
                     p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) ) );
                     return false;
                 }
-                if (args.length == 2) {
+                if (args.length == 0) {
                     p.sendMessage ( ChatColor.GRAY + "********************" );
                     p.sendMessage ( "" );
                     p.sendMessage ( ChatColor.GRAY + "Created by: " + ChatColor.WHITE + Settings.DEVELOPER_NAME );
