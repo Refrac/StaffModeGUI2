@@ -29,43 +29,52 @@ public class StaffModeCommand implements CommandExecutor {
         Player p = (Player) sender;
 
         if (!p.hasPermission ( "staffmodegui.open" )) {
-            p.sendMessage ( StaffModeGUI2.getPlugin ().getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) );
+            p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) ) );
             return false;
         }
         if (args.length == 0) {
             p.openInventory ( StaffModeGUI2.getInstance ().getMainInv ().getInventory () );
             return true;
-        }
+        } else if (args.length == 1)
         if (args[0].equalsIgnoreCase ( "reload" )) {
             if (!p.hasPermission ( "staffmodegui.reload" )) {
-                p.sendMessage ( StaffModeGUI2.getPlugin ().getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) );
+                p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) ) );
                 return false;
             }
-            if (args.length == 0) {
                 staffmodegui2.reloadConfig ();
                 p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.reloadMessage" ).replace ( "&" , "§" ) ) );
                 return true;
-            }
-            if (args[0].equalsIgnoreCase ( "about" )) {
+            } else if (args[0].equalsIgnoreCase ( "about" )) {
                 if (!p.hasPermission ( "staffmodegui.about" )) {
                     p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) ) );
                     return false;
                 }
-                if (args.length == 0) {
                     p.sendMessage ( ChatColor.GRAY + "********************" );
                     p.sendMessage ( "" );
                     p.sendMessage ( ChatColor.GRAY + "Created by: " + ChatColor.WHITE + Settings.DEVELOPER_NAME );
                     p.sendMessage ( ChatColor.GRAY + "Website: " + ChatColor.WHITE + Settings.DEVELOPER_URL );
-                    p.sendMessage ( ChatColor.GRAY + "Feedback: " + ChatColor.WHITE + Settings.FEEDBACK);
-                    p.sendMessage ( ChatColor.GOLD + "Spigot Link: " + ChatColor.WHITE + Settings.PLUGIN_URL );
-                    p.sendMessage ( ChatColor.GOLD + "Support Link: " + ChatColor.WHITE + Settings.SUPPORT_DISCORD_URL );
-                    p.sendMessage ( ChatColor.GOLD + "Version: " + ChatColor.WHITE + Settings.VERSION );
+                    p.sendMessage ( ChatColor.GRAY + "Feedback: " + ChatColor.WHITE + Settings.FEEDBACK );
+                    p.sendMessage ( ChatColor.GRAY + "Spigot Link: " + ChatColor.WHITE + Settings.PLUGIN_URL );
+                    p.sendMessage ( ChatColor.GRAY + "Support Link: " + ChatColor.WHITE + Settings.SUPPORT_DISCORD_URL );
+                    p.sendMessage ( ChatColor.GRAY + "Version: " + ChatColor.WHITE + Settings.VERSION );
                     p.sendMessage ( "" );
                     p.sendMessage ( ChatColor.GRAY + "********************" );
                     return true;
-                }
-            }
-        }
+                } else if (args[0].equalsIgnoreCase ( "help" )) {
+                    if (!p.hasPermission ( "staffmodegui.help" )) {
+                        p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&' , staffmodegui2.getConfig ().getString ( "defaultMessages.noPermission" ).replace ( "&" , "§" ) ) );
+                        return false;
+                    }
+                        p.sendMessage ( ChatColor.GRAY + "********************" );
+                        p.sendMessage ( "" );
+                        p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&', "&c/staffmode &7- &fOpens the GUI" ));
+                        p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&', "&c/staffmode help &7- &fThis help page" ));
+                        p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&', "&c/staffmode reload &7- &fReloads the config file" ));
+                        p.sendMessage ( ChatColor.translateAlternateColorCodes ( '&', "&c/staffmode about &7- &fThe about page" ));
+                        p.sendMessage ( "" );
+                        p.sendMessage ( ChatColor.GRAY + "********************" );
+                        return true;
+                    }
         return false;
     }
-}
+            }
