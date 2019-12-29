@@ -2,14 +2,14 @@
 configVersion: 1.1-beta3
 # DO NOT CHANGE PLEASE.
 #=======================================================
-# Permission Needed: staffmodegui.update
+# Permission Needed: staffmodegui2.update
 Update:
   Enabled: true
 # Enables if there is a message on-join when the plugin is outdated.
 #=======================================================
 defaultMessages:
   noPermission: "&cSorry you don't have permission!"
-  reloadMessage: "&aConfig reloaded. Changes should be live in game!"
+  reloadMessage: "&7Config reloaded."
 
 mainMenuReturn:
   # Main Menu return title
